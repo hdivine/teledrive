@@ -14,4 +14,8 @@ Expose 4000
 RUN yarn cache clean
 RUN yarn install --network-timeout 1000000
 COPY . .
-RUN yarn workspaces run build
+
+# Run the web service on container startup.
+CMD [ "yarn", "workspaces", "run", "build" ]
+
+# RUN  workspaces run build
