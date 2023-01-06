@@ -11,6 +11,7 @@ COPY web/package.json web/package.json
 
 Expose 4000
 
+RUN npx browserslist@latest --update-db
 RUN yarn cache clean
 RUN yarn install --network-timeout 1000000
 COPY . .
