@@ -9,6 +9,8 @@ COPY package.json .
 COPY api/package.json api/package.json
 COPY web/package.json web/package.json
 
+Expose 4000
+
 RUN yarn cache clean
 RUN yarn install --network-timeout 1000000
 COPY . .
